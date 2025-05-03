@@ -6,7 +6,7 @@ import '../HomeBanner/Banner.css'
 
 const HomeBanner = () => {
     return (
-        <div className="hero banner-img h-[800px]">
+        <div className="hero banner-img h-[800px] text-white">
             <div className="hero-content flex-col-reverse lg:flex-row-reverse  ">
                 <div className='flex    md:relative '>
                     <div className=''>

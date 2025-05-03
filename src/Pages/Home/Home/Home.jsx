@@ -4,6 +4,7 @@ import OurServices from './OurServices/OurServices';
 import ContactCard from './ConactCards/ContactCard';
 import Reviews from '../Reviews/Reviews';
 import DoctorCard from './DoctorCard/DoctorCard';
+import ContactUs from '../ContactUs/ContactUs';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
            <ContactCard></ContactCard>
            <Reviews></Reviews>
            <DoctorCard></DoctorCard>
+           <ContactUs></ContactUs>
         </div>
     );
 };
