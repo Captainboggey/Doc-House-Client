@@ -42,7 +42,7 @@ const Reviews = () => {
         modules={[Autoplay,  Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
+        
         {
             reviews.map(review=><SwiperSlide key={review._id}><div className='w-96 mx-auto'>
                  <div className='flex justify-between'>
