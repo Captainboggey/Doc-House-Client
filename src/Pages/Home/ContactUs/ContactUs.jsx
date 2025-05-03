@@ -3,7 +3,7 @@ import { FaLocationPin, FaPhone } from 'react-icons/fa6';
 
 const ContactUs = () => {
     return (
-        <div className="hero bg-[#07332F] md:h-[520px] rounded-lg text-white my-20">
+        <div className="hero bg-[#07332F] lg:h-[520px] rounded-lg text-white my-20">
             <div className="hero-content flex-col lg:justify-between lg:flex-row">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Contact With Us</h1>

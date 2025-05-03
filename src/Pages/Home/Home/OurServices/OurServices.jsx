@@ -6,9 +6,9 @@ import d3 from "../../../../assets/home/d3.jpg"
 
 const OurServices = () => {
     return (
-        <div className=' lg:flex mx-24 my-20 gap-10'>
+        <div className=' lg:flex  mx-24 my-20 gap-10'>
             <div>
-                <img src={ser1} alt="" />
+                <img src={ser1} className='w-[1053px]' alt="" />
             </div>
             <div>
                 <p><span className='text-3xl font-bold'>Our Services</span><br /> <br />Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
