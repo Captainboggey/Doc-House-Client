@@ -73,7 +73,7 @@ const DoctorProfile = () => {
                             {
                                 awards.map((award, i) => <li key={i}>{award}</li>)
                             }
-                            <h2 className='text-xl font-bold my-5'>Awards</h2>
+                            <h2 className='text-xl font-bold my-5'>Specialization</h2>
 
                             <li><p className='my-5'>{specialization}</p></li>
 
@@ -98,7 +98,7 @@ const DoctorProfile = () => {
 
                         <Rating
                             style={{ maxWidth: 100 }}
-                            value={review.rating}
+                            value={rating}
                             readOnly
                         />
                         Count: {review.count}

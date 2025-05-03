@@ -56,7 +56,7 @@ const DoctorCard = () => {
                                 <p>{doctor.charge_amount}</p>
                             </div>
                             <div className="card-actions w-full mt-5">
-                                <Link to={`/doctorProfile/${doctor._id}`}><button className="btn  bg-white hover:text-white hover:bg-[#F7A582] border-[#F7A582] text-[#F7A582] w-full">View Profile</button></Link>
+                                <Link className='w-full' to={`/doctorProfile/${doctor._id}`}><button className="btn  bg-white hover:text-white hover:bg-[#F7A582] border-[#F7A582] text-[#F7A582] w-full">View Profile</button></Link>
                             </div>
                         </div>
                     </div>)

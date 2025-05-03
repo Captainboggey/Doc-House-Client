@@ -8,7 +8,7 @@ const Navbar = () => {
             <li><Link to={'/'}>Home</Link></li>
             <li><Link to={'/'}>About</Link></li>
             <li><Link to={'/'}>Appointment</Link></li>
-            <li><Link to={'/'}>Login</Link></li>
+            <li><Link to={'/login'}>Login</Link></li>
     </>
     return (
         <div className="navbar max-w-7xl mx-auto  bg-opacity-35 fixed z-10 text-white">
