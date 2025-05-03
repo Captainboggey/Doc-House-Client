@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from "../../assets/Group 1.png"
 
 const Navbar = () => {
     const navOptions =
@@ -10,7 +11,7 @@ const Navbar = () => {
             <li><Link to={'/'}>Login</Link></li>
     </>
     return (
-        <div className="navbar  bg-opacity-35 fixed z-10 text-white">
+        <div className="navbar max-w-7xl mx-auto  bg-opacity-35 fixed z-10 text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden ">
@@ -34,7 +35,7 @@ const Navbar = () => {
                        
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl text-white"><span className='text-[#F7A582]'>Doc</span> House</a>
+                <a className="btn btn-ghost text-2xl text-white items-center flex "><img src={logo} alt="" /><span className='text-[#F7A582] '>Doc</span> House</a>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
