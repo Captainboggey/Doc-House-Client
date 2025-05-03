@@ -13,11 +13,11 @@ const OurServices = () => {
             <div>
                 <p><span className='text-3xl font-bold'>Our Services</span><br /> <br />Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                 <div className='mt-10'>
-                    <div role="tablist" className="tabs  ">
-                        <input type="radio" name="my_tabs_1" role="tab" className="tab hover:bg-orange-400" aria-label="Cavity Protection" />
-                        <div role="tabpanel" className="tab-content p-10">
+                    <div role="tablist" className="tabs tabs-lifted ">
+                        <input type="radio" name="my_tabs_2" role="tab" className="tab hover:bg-orange-400" aria-label="Cavity Protection" />
+                        <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
                             <div>
-                                <img src={d1} className='lg:h-[350px] lg:w-[558px]' alt="" />
+                                <img src={d1} className='lg:h-[350px] w-[558px]' alt="" />
                             </div>
                             <div className='mt-10'>
                                 <span className='text-2xl'>Cavity Protection</span><br />
@@ -31,12 +31,12 @@ const OurServices = () => {
 
                         <input
                             type="radio"
-                            name="my_tabs_1"
+                            name="my_tabs_2"
                             role="tab"
                             className="tab hover:bg-orange-400"
                             aria-label="Cosmetic Dentisty"
                             defaultChecked />
-                        <div role="tabpanel" className="tab-content p-10 0">
+                        <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6 ">
                             <div>
                                 <img src={d2} alt="" className='lg:h-[350px] lg:w-[558px]' />
                             </div>
@@ -50,8 +50,8 @@ const OurServices = () => {
                             </div>
                         </div>
 
-                        <input type="radio" name="my_tabs_1" role="tab " className="tab hover:bg-orange-400" aria-label="Oral Surgery" />
-                        <div role="tabpanel" className="tab-content p-10 ">
+                        <input type="radio" name="my_tabs_2" role="tab " className="tab hover:bg-orange-400" aria-label="Oral Surgery" />
+                        <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6 ">
                             <div>
                                 <img src={d3} alt=""  className='lg:h-[350px] lg:w-[558px]'/>
                             </div>

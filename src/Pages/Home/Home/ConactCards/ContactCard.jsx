@@ -3,7 +3,7 @@ import { CiClock2, CiLocationOn, CiPhone } from 'react-icons/ci';
 
 const ContactCard = () => {
     return (
-        <div className='flex gap-10 justify-center my-10'>
+        <div className='md:flex gap-10 justify-center my-10'>
             <div className='flex items-center justify-center gap-2 bg-[#07332F] p-10 text-white rounded-lg'>
                 <div className=''>
                 <CiClock2 className='text-4xl' />

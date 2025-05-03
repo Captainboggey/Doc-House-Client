@@ -4,11 +4,19 @@ import './index.css'
 import App from './App.jsx'
 import { RouterProvider } from 'react-router-dom'
 import router from './Routes/Route.jsx'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+
+const queryClient = new QueryClient()
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    
     <div className='max-w-7xl mx-auto'>
+    <QueryClientProvider client={queryClient}>
     <RouterProvider router={router}></RouterProvider>
+    </QueryClientProvider>
     </div>
+   
   </StrictMode>,
 )
