@@ -1,11 +1,11 @@
 import React from 'react';
-import b1 from '../../../assets/banner/Rectangle 20075.svg'
-import b2 from '../../../assets/banner/Rectangle 20076.png'
-import b3 from '../../../assets/banner/Rectangle 20077.png'
+import b1 from '../../../assets/home/Rectangle 20075.svg'
+import b2 from '../../../assets/home/Rectangle 20076.png'
+import b3 from '../../../assets/home/Rectangle 20077.png'
 
 const HomeBanner = () => {
     return (
-        <div className="hero bg-[#07332F] min-h-screen">
+        <div className="hero bg-[#07332F] h-[800px]">
             <div className="hero-content flex-col-reverse lg:flex-row-reverse  ">
                 <div className='flex    md:relative '>
                     <div className=''>
