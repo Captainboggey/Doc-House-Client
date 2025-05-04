@@ -6,14 +6,14 @@ import useAxiosSecure from './useAxiosSecure.jsx';
 const useDoctors = () => {
     const axiosSecure =useAxiosSecure()
     const axiosPublic = useAxiosPublic()
-    const{data:doctors=[]}=useQuery({
+    const{data:doctors=[],refetch}=useQuery({
         queryKey:['doctors'],
         queryFn:async()=>{
             const res = await axiosSecure.get('/doctors')
             return res.data
         }
     })
-    return [doctors]
+    return [doctors,refetch]
 };
 
 export default useDoctors;

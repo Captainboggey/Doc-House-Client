@@ -11,6 +11,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import MyAppointments from "../Pages/Dashboard/Dashboard/MyAppoinments/MyAppointments";
 import AllUsers from "../Pages/Dashboard/Dashboard/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
+import ManageDoctors from "../Pages/Dashboard/ManageDoctors/ManageDoctors";
 
 
 const router = createBrowserRouter([
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
         }]
     },{
         path:'/dashboard',
-        element:<Dashboard></Dashboard>,
+        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         errorElement:<Error></Error>,
         children:[{
             path:'/dashboard/myAppointments',
@@ -45,6 +46,9 @@ const router = createBrowserRouter([
         },{
             path:'/dashboard/allUsers',
             element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+        },{
+            path:'/dashboard/manageDoctors',
+            element:<AdminRoute><ManageDoctors></ManageDoctors></AdminRoute>
         }]
     }
 ])

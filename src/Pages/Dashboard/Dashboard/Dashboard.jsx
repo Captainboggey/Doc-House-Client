@@ -15,6 +15,7 @@ const Dashboard = () => {
                 isAdmin?<>
                  <Link to={'/'} className='mt-5 font-bold text-center '>Home</Link>
                  <Link to={'/dashboard/allUsers'} className='mt-5 font-bold text-center '>All Users</Link>
+                 <Link to={'/dashboard/manageDoctors'} className='mt-5 font-bold text-center '>Manage Doctors</Link>
                 </>:
                 <>
                 <Link to={'/'} className='mt-5 font-bold text-center '>Home</Link>
