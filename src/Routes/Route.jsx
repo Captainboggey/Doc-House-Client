@@ -5,12 +5,14 @@ import DoctorProfile from "../Pages/Home/DoctorProfile/DoctorProfile";
 import Login from "../Pages/Login.jsx/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../Pages/Error/Error";
 
 
 const router = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<Error></Error>,
         children:[{
             path:'/',
             element:<Home></Home>
