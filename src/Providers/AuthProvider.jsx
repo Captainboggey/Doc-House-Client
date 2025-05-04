@@ -44,9 +44,12 @@ const AuthProvider = ({children}) => {
             if(currentUser){
                 axiosPublic.post('/jwt',logged)
                 .then(res=>{
-                    console.log(res.data)
-                    localStorage.setItem('access-token',res.data.token)
+                    // console.log(res.data)
+                    if(res.data.token){
+                        localStorage.setItem('access-token',res.data.token)
                     setLoading(false)
+                    }
+                    
                 })
             }else{
                 localStorage.removeItem('access-token')

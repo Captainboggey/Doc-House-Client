@@ -1,21 +1,17 @@
 import React from 'react';
 import useAuth from '../Hooks/useAuth';
 import { Navigate, useLocation } from 'react-router-dom';
-import { ProgressBar } from 'react-loader-spinner';
+// import { ProgressBar } from 'react-loader-spinner';
 
 const PrivateRoute = ({children}) => {
     const {user,loading}=useAuth();
     const location = useLocation()
     if(loading){
-        return  <> render(<ProgressBar
-            visible={true}
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="progress-bar-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            />)
+        return  <> <span className="loading loading-ball loading-xs"></span>
+        <span className="loading loading-ball loading-sm"></span>
+        <span className="loading loading-ball loading-md"></span>
+        <span className="loading loading-ball loading-lg"></span>
+        <span className="loading loading-ball loading-xl"></span>
             </>
           
     }

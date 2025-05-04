@@ -9,6 +9,8 @@ import Error from "../Pages/Error/Error";
 import Appointment from "../Pages/Appointment/Appointment";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import MyAppointments from "../Pages/Dashboard/Dashboard/MyAppoinments/MyAppointments";
+import AllUsers from "../Pages/Dashboard/Dashboard/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
 
 
 const router = createBrowserRouter([
@@ -40,6 +42,9 @@ const router = createBrowserRouter([
         children:[{
             path:'/dashboard/myAppointments',
             element:<MyAppointments></MyAppointments>
+        },{
+            path:'/dashboard/allUsers',
+            element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
         }]
     }
 ])
