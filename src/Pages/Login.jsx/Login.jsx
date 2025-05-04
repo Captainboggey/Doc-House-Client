@@ -18,10 +18,10 @@ const Login = () => {
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
-        console.log(data.password)
+        // console.log(data.password)
         signIn(data.email, data.password)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 const Toast = Swal.mixin({
                     toast: true,
                     position: "top-end",

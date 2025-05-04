@@ -6,6 +6,7 @@ import Login from "../Pages/Login.jsx/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../Pages/Error/Error";
+import Appointment from "../Pages/Appointment/Appointment";
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,9 @@ const router = createBrowserRouter([
         },{
             path:'/signup',
             element:<SignUp></SignUp>
+        },{
+            path:'/appointment',
+            element:<PrivateRoute><Appointment></Appointment></PrivateRoute>
         }]
     }
 ])

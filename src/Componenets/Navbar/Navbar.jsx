@@ -9,7 +9,7 @@ const Navbar = () => {
     <>
             <li><Link to={'/'}>Home</Link></li>
             <li><Link to={'/'}>About</Link></li>
-            <li><Link to={'/'}>Appointment</Link></li>
+            <li><Link to={'/appointment'}>Appointment</Link></li>
             {
                 user?<li><button onClick={()=>logOut()}>Logout</button></li>:<li><Link to={'/login'}>Login</Link></li>
             }
