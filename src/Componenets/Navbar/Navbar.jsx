@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/Group 1.png"
+import useAuth from '../../Hooks/useAuth';
 
 const Navbar = () => {
+    const {user,logOut}=useAuth()
     const navOptions =
     <>
             <li><Link to={'/'}>Home</Link></li>
             <li><Link to={'/'}>About</Link></li>
             <li><Link to={'/'}>Appointment</Link></li>
-            <li><Link to={'/login'}>Login</Link></li>
+            {
+                user?<li><button onClick={()=>logOut()}>Logout</button></li>:<li><Link to={'/login'}>Login</Link></li>
+            }
     </>
     return (
         <div className="navbar max-w-7xl mx-auto  bg-opacity-35 fixed z-10 text-white">

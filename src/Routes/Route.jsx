@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import DoctorProfile from "../Pages/Home/DoctorProfile/DoctorProfile";
 import Login from "../Pages/Login.jsx/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
             element:<Home></Home>
         },{
             path:'/doctorProfile/:id',
-            element:<DoctorProfile></DoctorProfile>,
+            element:<PrivateRoute><DoctorProfile></DoctorProfile></PrivateRoute>,
             loader:({params})=> fetch(`http://localhost:5000/doctors/collection/${params.id}`)
         },{
             path:'/login',
