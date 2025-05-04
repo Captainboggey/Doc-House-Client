@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import useAxiosPublic from '../../../../Hooks/useAxiosPublic';
+import useAxiosPublic from '../../../../Hooks/useAxiosPublic.jsx';
 
 import { Rating } from '@smastrom/react-rating'
 

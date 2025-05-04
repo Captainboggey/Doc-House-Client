@@ -13,9 +13,13 @@ const Navbar = () => {
             {
                 user?<li><button onClick={()=>logOut()}>Logout</button></li>:<li><Link to={'/login'}>Login</Link></li>
             }
+            {
+                user?<li><Link to={'/dashboard'}>Dashboard</Link></li>:''
+            }
+            
     </>
     return (
-        <div className="navbar max-w-7xl mx-auto  bg-opacity-35 fixed z-10 text-white">
+        <div className="navbar max-w-7xl mx-auto  bg-[#07332F] py-4 fixed z-10 text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden ">

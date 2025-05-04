@@ -14,7 +14,7 @@ import { useTheme } from '@mui/material/styles';
 import p1 from "../../../src/assets/appointment/006-broken-tooth.png"
 import { useForm } from "react-hook-form"
 import useAuth from '../../Hooks/useAuth';
-import useAxiosPublic from '../../Hooks/useAxiosPublic';
+import useAxiosPublic from '../../Hooks/useAxiosPublic.jsx';
 import Swal from 'sweetalert2';
 
 
@@ -40,7 +40,15 @@ const Appointment = () => {
         formState: { errors },
       } = useForm()
       const onSubmit =async (data) => {
-        const result = await axiosPublic.post('/appointments',data)
+        const appointInfo ={
+            name : data.name,
+            date: data.date,
+            time: data.time,
+            email: data.email,
+            phone: data.phone,
+            service: data.service
+        }
+        const result = await axiosPublic.post('/appointments',appointInfo)
         if(result.data.insertedId){
             reset()
             const Toast = Swal.mixin({
@@ -120,6 +128,10 @@ const Appointment = () => {
                             </DialogTitle>
                             <DialogContent>
                                 <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                                <div className="form-control">
+                                        
+                                        <input {...register('service')} type="text" placeholder="Service" className="input input-bordered" defaultValue={doctor.specialization} required />
+                                    </div>
                                 <div className="form-control">
                                         
                                         <input {...register('date')} type="text" placeholder="date" className="input input-bordered" defaultValue={value?value:'please set date from calender'} required />
