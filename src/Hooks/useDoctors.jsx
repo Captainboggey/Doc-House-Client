@@ -9,7 +9,7 @@ const useDoctors = () => {
     const{data:doctors=[],refetch}=useQuery({
         queryKey:['doctors'],
         queryFn:async()=>{
-            const res = await axiosSecure.get('/doctors')
+            const res = await axiosPublic.get('/doctors')
             return res.data
         }
     })

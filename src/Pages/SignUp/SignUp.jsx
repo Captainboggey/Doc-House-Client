@@ -9,9 +9,9 @@ import Swal from 'sweetalert2';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const SignUp = () => {
-    const { signUp, updateInfo,signInWithGoogle } = useAuth()
+    const { signUp, updateInfo, signInWithGoogle } = useAuth()
     const navigate = useNavigate()
-    const axiosPublic=useAxiosPublic()
+    const axiosPublic = useAxiosPublic()
     const {
         register,
         handleSubmit,
@@ -20,45 +20,86 @@ const SignUp = () => {
     } = useForm()
     const onSubmit = (data) => {
         signUp(data.email, data.password)
-            .then(async(res) => {
-                const userInfo={
-                    email: data.email,
-                    name: data.name
-                }
-                const result = await axiosPublic.post('/users', userInfo) 
-                console.log(result.data)
-
-                updateInfo(data.username)
-
+            .then((res) => {
+                updateInfo(data.name)
                     .then(res => {
-                        const Toast = Swal.mixin({
-                            toast: true,
-                            position: "top-end",
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true,
-                            didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                            }
-                        });
-                        Toast.fire({
-                            icon: "success",
-                            title: "Signed in successfully"
-                        });
+                        const userInfo = {
+                            email: data.email,
+                            name: data.name
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    const Toast = Swal.mixin({
+                                        toast: true,
+                                        position: "top-end",
+                                        showConfirmButton: false,
+                                        timer: 3000,
+                                        timerProgressBar: true,
+                                        didOpen: (toast) => {
+                                            toast.onmouseenter = Swal.stopTimer;
+                                            toast.onmouseleave = Swal.resumeTimer;
+                                        }
+                                    });
+                                    Toast.fire({
+                                        icon: "success",
+                                        title: "Signed in successfully"
+                                    });
 
-                        navigate('/')
+                                    navigate('/')
+                                }
+                            })
+
                     })
+
+
+
+
+
+                // console.log(result.data)
+
+
+
+
+                // if(res.user){
+
+                // }
+
+
             })
     }
-     const handleGoogle = () => {
-            signInWithGoogle()
-                .then(async (res) => {
-                    console.log(res.user.email)
-                    const userInfo = {
-                        email: res.user.email,
-                        name: res.user.displayName
+    const handleGoogle = () => {
+        signInWithGoogle()
+            .then(async (res) => {
+                console.log(res.user.email)
+                const userInfo = {
+                    email: res.user.email,
+                    name: res.user.displayName
+                }
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
                     }
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: "Signed in successfully"
+                });
+
+                navigate('/')
+                const result = await axiosPublic.post('/users', userInfo)
+
+                // console.log(res.data)
+
+
+                if (result) {
+                    // console.log(res.data)
                     const Toast = Swal.mixin({
                         toast: true,
                         position: "top-end",
@@ -74,38 +115,14 @@ const SignUp = () => {
                         icon: "success",
                         title: "Signed in successfully"
                     });
-    
+
                     navigate('/')
-                    const result = await axiosPublic.post('/users', userInfo)
-    
-                    // console.log(res.data)
-    
-    
-                    if (result) {
-                        // console.log(res.data)
-                        const Toast = Swal.mixin({
-                            toast: true,
-                            position: "top-end",
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true,
-                            didOpen: (toast) => {
-                                toast.onmouseenter = Swal.stopTimer;
-                                toast.onmouseleave = Swal.resumeTimer;
-                            }
-                        });
-                        Toast.fire({
-                            icon: "success",
-                            title: "Signed in successfully"
-                        });
-    
-                        navigate('/')
-                    }
-    
-    
-    
-                })
-        }
+                }
+
+
+
+            })
+    }
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col mx-auto  lg:flex-row">

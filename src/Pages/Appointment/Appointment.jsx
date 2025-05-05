@@ -134,7 +134,7 @@ const Appointment = () => {
                                     </div>
                                 <div className="form-control">
                                         
-                                        <input {...register('date')} type="text" placeholder="date" className="input input-bordered" defaultValue={value?value:'please set date from calender'} required />
+                                        <input {...register('date')} type="text" placeholder="date" className="input input-bordered" defaultValue={value?value:new Date()} required />
                                     </div>
                                     <div className="form-control">
                                         
